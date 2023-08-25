@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod1
+spec:
+  containers:
+    - name: poduno
+      image: poduno-image:latest
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 4000
+      command: ["node"]
+      args: ["index.js"]
+      resources:
+        limits:
+          cpu: "1"
+          memory: "512Mi"
+        requests:
+          cpu: "0.5"
+          memory: "256Mi"
+
